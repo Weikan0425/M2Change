@@ -85,7 +85,6 @@ MCD/DATA/
 └── M2Change-CZ2/
     ├── train/
     └── test/
-
 ```
 
 ### `C. Configuration`
