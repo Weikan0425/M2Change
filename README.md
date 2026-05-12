@@ -34,11 +34,11 @@ Practical and accurate building damage assessment in conflict zones is a critica
 
 **M2Change** introduces a novel **multimodal, multi-temporal paradigm**:
 * **The Challenge:** Bridging the massive modality gap between pre-event high-resolution (1m) optical imagery and post-event medium-resolution (10m) SAR time series.
-* **The Dataset:** Features two distinct conflict scenarios: **M2Change-CZ1** (Ukraine, spatially extensive sparse damage) and **M2Change-CZ2** (Gaza, densely populated concentrated destruction).
+* **The Dataset:** Features two distinct conflict scenarios: **M2Change-CZ1** (spatially extensive sparse damage) and **M2Change-CZ2** (densely populated concentrated destruction).
 * **The Solution (MTCNet):** We propose the Multimodal-Temporal Coupling Network (MTCNet), featuring a **Change-aware Alignment (CAA)** module to bridge the modality gap, and a **Spatio-Temporal Attention Differentiation (STAD)** module to enrich difference features with deep temporal context.
 
 <p align="center">
-  <img src="./assets/overview.jpg" alt="M2Change Dataset Overview" width="90%">
+  <img src="./overview.png" alt="M2Change Dataset Overview" width="90%">
 </p>
 
 ---
@@ -49,8 +49,8 @@ We provide the pre-trained weights of our **MTCNet-Base** model for both subsets
 
 | Dataset | Model | F1-Score | IoU | Download Link |
 | :---  | :---: | :---: | :---: | :---: |
-| **M2Change-CZ1** | MTCNet-Base | 69.19% | 52.90% | [Download (Baidu)](https://pan.baidu.com/s/1p5cxyYW1uy_5e3XB5lMErg?pwd=emax)/[Download (Google)](https://drive.google.com/file/d/1tODgix16u4vooli_cn_yqaOKnJJX9Enc/view?usp=drive_link) |
-| **M2Change-CZ2** | MTCNet-Base | 68.39% | 51.96% | [Download (Baidu)](https://pan.baidu.com/s/1xGeO40tifCQekSbXezFFVw?pwd=rrm8)/[Download (Google)](#)|
+| **M2Change-CZ1** | MTCNet-Base | 69.19% | 52.90% | [Baidu Netdisk](https://pan.baidu.com/s/1p5cxyYW1uy_5e3XB5lMErg?pwd=emax)/[Google Drive](https://drive.google.com/file/d/1tODgix16u4vooli_cn_yqaOKnJJX9Enc/view?usp=drive_link) |
+| **M2Change-CZ2** | MTCNet-Base | 68.39% | 51.96% | [Baidu Netdisk](https://pan.baidu.com/s/1xGeO40tifCQekSbXezFFVw?pwd=rrm8)/[Google Drive](https://drive.google.com/file/d/1DIWsTPx_nRjS_J_qoppgfiu3SUbKdN3-/view?usp=drive_link)|
 
 *(Note: Please place the downloaded `.pth` files in their respective directories as defined in `Config.py`.)*
 
