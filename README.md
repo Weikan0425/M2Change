@@ -38,7 +38,7 @@ Practical and accurate building damage assessment in conflict zones is a critica
 * **The Solution (MTCNet):** We propose the Multimodal-Temporal Coupling Network (MTCNet), featuring a **Change-aware Alignment (CAA)** module to bridge the modality gap, and a **Spatio-Temporal Attention Differentiation (STAD)** module to enrich difference features with deep temporal context.
 
 <p align="center">
-  <img src="./overview.png" alt="M2Change Dataset Overview" width="90%">
+  <img src="./overview.png" alt="M2Change Dataset Overview" width="100%">
 </p>
 
 ---
