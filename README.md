@@ -23,7 +23,7 @@ We are continuously updating this repository. Here is our current progress:
 | ✅ | **Dataset Release** | Publicly release M2Change-CZ1 and M2Change-CZ2 on Hugging Face. |
 | ✅ | **Model Release** | Open-source the core architecture of MTCNet (CAA & STAD modules). |
 | ✅ | **Weights Release** | Provide pre-trained weights for MTCNet-Base on both datasets. |
-| ⬜️ | **Inference Code** | Release the complete test pipeline and evaluation scripts (`Val.py`). |
+| ✅ | **Inference Code** | Release the complete test pipeline and evaluation scripts (`Val.py`). |
 | ⬜️ | **Training Code** | Release the full end-to-end training code (`Train.py`). |
 
 ---
