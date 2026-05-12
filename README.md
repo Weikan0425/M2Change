@@ -49,8 +49,8 @@ We provide the pre-trained weights of our **MTCNet-Base** model for both subsets
 
 | Dataset | Model | F1-Score | IoU | Download Link |
 | :---  | :---: | :---: | :---: | :---: |
-| **M2Change-CZ1** | MTCNet-Base | 69.19% | 52.90% | [Download (Baidu Netdisk, code: emax)](https://pan.baidu.com/s/1p5cxyYW1uy_5e3XB5lMErg?pwd=emax)/[Download (Google Drive)](#) |
-| **M2Change-CZ2** | MTCNet-Base | 68.39% | 51.96% | [Download (Baidu Netdisk, code: rrm8)](https://pan.baidu.com/s/1xGeO40tifCQekSbXezFFVw?pwd=rrm8)/[Download (Google Drive)](#)|
+| **M2Change-CZ1** | MTCNet-Base | 69.19% | 52.90% | [Download (Baidu)](https://pan.baidu.com/s/1p5cxyYW1uy_5e3XB5lMErg?pwd=emax)/[Download (Google)](https://drive.google.com/file/d/1tODgix16u4vooli_cn_yqaOKnJJX9Enc/view?usp=drive_link) |
+| **M2Change-CZ2** | MTCNet-Base | 68.39% | 51.96% | [Download (Baidu)](https://pan.baidu.com/s/1xGeO40tifCQekSbXezFFVw?pwd=rrm8)/[Download (Google)](#)|
 
 *(Note: Please place the downloaded `.pth` files in their respective directories as defined in `Config.py`.)*
 
