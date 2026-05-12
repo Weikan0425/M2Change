@@ -1,7 +1,7 @@
 <div align="center">
 <h1 align="center">🌍 M2Change 🌍</h1>
 
-<h3>Beyond Bi-temporal and Unimodal: A Multimodal-Temporal Benchmark for Building Damage Assessment in Conflict Zones</h3>
+<h3>Beyond Bi-temporal and Unimodal: A Multimodal-Temporal Benchmark for Change Detection in Conflict Zones</h3>
 
 [Kan Wei]<sup>1</sup>, [Jing Yao]<sup>1 *</sup>, [Jiahui Cui]<sup>1</sup>, [Xinyu Zhao]<sup>1</sup>, [Lei Wang]<sup>1 *</sup>, [Gemine Vivone]<sup>2</sup>, [Pedram Ghamisi]<sup>3</sup>
 
