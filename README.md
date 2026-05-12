@@ -20,11 +20,11 @@ We are continuously updating this repository. Here is our current progress:
 
 | Status | Task | Description |
 | :---: | :--- | :--- |
-| ✅ | **Dataset Release** | Publicly release M2Change-CZ1 (Ukraine) and M2Change-CZ2 (Gaza) on Hugging Face. |
+| ✅ | **Dataset Release** | Publicly release M2Change-CZ1 and M2Change-CZ2 on Hugging Face. |
 | ✅ | **Model Release** | Open-source the core architecture of MTCNet (CAA & STAD modules). |
 | ✅ | **Weights Release** | Provide pre-trained weights for MTCNet-Base on both datasets. |
-| ⬜️ | **Inference Code** | Release the complete test pipeline and evaluation scripts (`val.py`). |
-| ⬜️ | **Training Code** | Release the full end-to-end training code (`train.py` & `config.py`). |
+| ⬜️ | **Inference Code** | Release the complete test pipeline and evaluation scripts (`Val.py`). |
+| ⬜️ | **Training Code** | Release the full end-to-end training code (`Train.py`). |
 
 ---
 
@@ -47,12 +47,12 @@ Practical and accurate building damage assessment in conflict zones is a critica
 
 We provide the pre-trained weights of our **MTCNet-Base** model for both subsets of the M2Change dataset. You can download them directly from the links below:
 
-| Dataset | Split Type | Model | F1-Score | IoU | Download Link |
-| :--- | :---: | :---: | :---: | :---: | :---: |
-| **M2Change-CZ1** (Ukraine) | 8:2 Geographic | MTCNet-Base | 69.19% | 52.90% | [Download (HF)](#) |
-| **M2Change-CZ2** (Gaza) | 8:2 Geographic | MTCNet-Base | 68.39% | 51.96% | [Download (HF)](#) |
+| Dataset | Model | F1-Score | IoU | Download Link |
+| :---  | :---: | :---: | :---: | :---: |
+| **M2Change-CZ1** | MTCNet-Base | 69.19% | 52.90% | [Download (Baidu Netdisk, code: emax)](https://pan.baidu.com/s/1p5cxyYW1uy_5e3XB5lMErg?pwd=emax)/[Download (Google Drive)](#) |
+| **M2Change-CZ2** | MTCNet-Base | 68.39% | 51.96% | [Download (Baidu Netdisk, code: rrm8)](https://pan.baidu.com/s/1xGeO40tifCQekSbXezFFVw?pwd=rrm8)/[Download (Google Drive)](#)|
 
-*(Note: Please place the downloaded `.pth` files in their respective directories as defined in `config.py`.)*
+*(Note: Please place the downloaded `.pth` files in their respective directories as defined in `Config.py`.)*
 
 ---
 
@@ -72,18 +72,17 @@ pip install -r requirements.txt
 
 ### `B. Data Preparation`
 
-1. Download the M2Change dataset from [Hugging Face](https://www.google.com/url?sa=E&source=gmail&q=https://huggingface.co/datasets/Weikan0425/M2Change).
-2. Organize the downloaded data following the directory structure expected by `config.py`.
-* *Note: In the code, M2Change-CZ1 is referred to as `Ukraine` and M2Change-CZ2 is referred to as `GAZA`.*
+1. Download the M2Change dataset from [Hugging Face](https://huggingface.co/datasets/Kerwin0425/M2Change).
+2. Organize the downloaded data following the directory structure expected by `Config.py`.
 
 
 
 ```text
 MCD/DATA/
-├── GAZA/                  # M2Change-CZ2
+├── M2Change-CZ1/
 │   ├── train/
 │   └── test/
-└── Ukraine/               # M2Change-CZ1
+└── M2Change-CZ2/
     ├── train/
     └── test/
 
@@ -91,40 +90,40 @@ MCD/DATA/
 
 ### `C. Configuration`
 
-All hyperparameters, dataset paths, and saving directories are centralized in `config.py`. You can modify parameters such as `batch_size`, `learning_rate`, and `n_times` (temporal sequence length) directly in this file before running the scripts.
+All hyperparameters, dataset paths, and saving directories are centralized in `Config.py`. You can modify parameters such as `batch_size`, `learning_rate`, and `n_times` (temporal sequence length) directly in this file before running the scripts.
 
 ### `D. Training`
 
-You can train the model from scratch using the unified `train.py` script. Specify the dataset using the `--dataset` argument:
+You can train the model from scratch using the unified `Train.py` script. Specify the dataset using the `--dataset` argument:
 
 ```bash
-# Train on M2Change-CZ2 (Gaza) using GPU 0
-CUDA_VISIBLE_DEVICES=0 python train.py --dataset GAZA
+# Train on M2Change-CZ1  using GPU 0
+CUDA_VISIBLE_DEVICES=0 python Train.py --dataset M2Change-CZ1
 
-# Train on M2Change-CZ1 (Ukraine) using GPU 1
-CUDA_VISIBLE_DEVICES=1 python train.py --dataset Ukraine
+# Train on M2Change-CZ2  using GPU 1
+CUDA_VISIBLE_DEVICES=1 python Train.py --dataset M2Change-CZ2
 
 ```
 
-*Tip: To run the training process in the background, use `nohup CUDA_VISIBLE_DEVICES=0 python train.py --dataset GAZA > train_gaza.log 2>&1 &`.*
+*Tip: To run the training process in the background, use `nohup CUDA_VISIBLE_DEVICES=0 python Train.py --dataset M2Change-CZ1 > train_m2Change-cz1.log 2>&1 &`.*
 
 ### `E. Inference & Evaluation`
 
-To evaluate the model or generate change maps using the pre-trained weights, run `val.py`:
+To evaluate the model or generate change maps using the pre-trained weights, run `Val.py`:
 
 ```bash
-# Evaluate on GAZA dataset
-CUDA_VISIBLE_DEVICES=0 python val.py --dataset GAZA
+# Evaluate on M2Change-CZ1 dataset
+CUDA_VISIBLE_DEVICES=0 python Val.py --dataset M2Change-CZ1
 
-# Evaluate on Ukraine dataset
-CUDA_VISIBLE_DEVICES=0 python val.py --dataset Ukraine
+# Evaluate on M2Change-CZ2 dataset
+CUDA_VISIBLE_DEVICES=1 python Val.py --dataset M2Change-CZ2
 
 ```
 
-**Overriding Default Paths:** If you want to test a custom model checkpoint or save visualization results to a different folder without editing `config.py`, use the optional flags:
+**Overriding Default Paths:** If you want to test a custom model checkpoint or save visualization results to a different folder without editing `Config.py`, use the optional flags:
 
 ```bash
-python val.py --dataset GAZA --model_path /path/to/custom_weights.pth --save_dir /path/to/save_results/
+python Val.py --dataset M2Change-CZ1 --model_path /path/to/custom_weights.pth --save_dir /path/to/save_results/
 
 ```
 
